@@ -1,0 +1,21 @@
+{
+  "snippetFilename": "milo.20160205_075716-0400.mp3",
+  "md5AtSave": "1d8d65c394dcfbbd47bd27035c6ca6b3",
+  "uuid": "181a5644-e526-479a-8d71-afdd764f3874",
+  "representedDatetime": "2016-02-05 07:57:16 -0400",
+  "representedDatetimeConfidence": "Unknown. Cut with FFMPEG. Needs testing to find out how accurate it is.",
+  "original": {
+    "OriginalFilename": "20160205_075709-0400.mp3",
+    "OriginalComputer": "milo",
+    "OriginalComputerMACAddress": "FF:FF:35:8f:FF:FF",
+    "OriginalLocation": {
+      "latitude": "45.838253",
+      "longitude": "-64.30417"
+    },
+    "OriginalFilenameConfidence": "100%",
+    "OriginalComputerConfidence": "User Specified",
+    "OriginalLocationConfidence": "User Specified",
+    "OriginalFileRubyTime": "2016-02-05 07:57:09 -0400",
+    "OrigionalDuration": 1797
+  }
+}

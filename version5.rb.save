@@ -1,0 +1,143 @@
+#require 'neo4j-core'
+require 'neo4j'
+
+
+session = Neo4j::Session.open
+
+#currentUser = Neo4j::Session.current.query
+#        .match(n1: :Person)
+#        .where(n1: {username: "josh"})
+#        .pluck('n1').first
+
+#puts currentUser[:username]
+#puts currentUser[:desc]
+
+
+
+class Person
+  include Neo4j::ActiveNode
+#  property :uuid
+  property :name
+  property :username
+  property :desc
+  property :scent
+  property :sound
+  property :taste
+#  property :touch
+
+
+  property :details
+
+  has_one :in, :room, type: :CONTAINS
+  has_many :out, :thing, type: :HOLDING
+end
+
+class Door
+  include Neo4j::ActiveNode
+  property :name
+  property :desc
+  has_one :in, :room, type: :CONTAINS
+end
+
+class Thing
+  include Neo4j::ActiveNode
+  property :name
+  property :desc
+  has_one :in, :room, type: :CONTAINS
+end
+
+class Room
+  include Neo4j::ActiveNode
+#  id_property :uuid
+  property :name
+  property :desc
+  has_many :out, :person, type: :CONTAINS
+  has_many :out, :door, type: :CONTAINS
+  has_many :out, :thing, type: :CONTAINS
+#  has_many :in, :door, type: :DOOR_TO
+end
+
+
+def look() 
+  player = Person.find_by(username: 'josh')
+  #puts player.name
+  #puts player.desc
+
+  puts "#{player.room[:name].tr!('_', ' ')} (#{player.room[:uuid][0,10]})"
+  puts player.room[:desc]
+#  puts player.uuid
+
+  puts "\nContents:"
+  player.room.thing.each do |thing|
+    puts "#{thing[:name]}  "
+  end
+  player.room.person.each do |person|
+    puts "#{person[:name]}  "
+  end
+
+  puts "\nObvious Exits:"
+  player.room.door.each do |door|
+    print "#{door[:name]}  "
+  end
+  puts ""
+end
+
+def lookat(string)
+  player = Person.find_by(username: 'josh')
+  if thing = player.room.thing.find_by(name: string)
+    puts thing[:desc]
+  elsif otherPlayer = player.room.person.find_by(name: string)
+    puts otherPlayer[:desc]
+  else
+    puts "I don't see that here."
+  end
+end
+
+def examine(string)
+  # This should be refactored so that examine simply
+  # shows all properties and thier names
+  # without having to manually parse them
+  
+  player = Person.find_by(username: 'josh')
+  if thing = player.room.thing.find_by(name: string)
+    puts "#{thing[:name]} (#{thing[:uuid]})"
+    puts thing[:desc]
+    puts "Owned by thing[:owner]"
+
+   thing.each_key do |property|
+     puts "Property: #{property}"
+   end
+  elsif otherPlayer = player.room.person.find_by(name: string)
+    #otherPlayer.each_key do |property|
+    #  puts "Property: #{property}"
+    #end
+    puts "class.to_s"
+    puts otherPlayer.
+
+    puts "#{otherPlayer[:name]} (#{otherPlayer[:uuid]})"
+    puts otherPlayer[:desc]
+    puts "Owned by otherPlayer[:owner]"
+  else
+    puts "I don't see that here."
+  end
+end
+
+def inv()
+  player = Person.find_by(username: 'josh')
+
+  puts "You are holding:"
+  player.thing.each do |thing|
+    puts "#{thing[:name]}  "
+  end
+  return true
+end
+
+
+# sandra's lessons
+#sandra.lessons.each{|l| puts l.full_name }
+
+#puts "by uuid"
+#puts Room.find("61bb1810-c513-11e5-951c-0800274d3a1f")[:name]
+
+#puts "You look around..."
+#look()

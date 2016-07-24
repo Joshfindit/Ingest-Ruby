@@ -1,0 +1,34 @@
+<html>
+<head>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.0.52/wavesurfer.min.js"></script>
+</head>
+<!-- etc -->
+
+
+  <div id="waveform"></div>
+  <ul>
+
+  <li><%="entry.name: #{@entry.name}"%></li>
+  <li><%="entry.uuid: #{@entry.uuid}"%></li>
+  <li><%="entry.OriginalFilename: #{@entry.OriginalFilename}"%></li>
+  <li><%="entry.content: #{@entry.content}"%></li>
+  <li><%="entry.created_at: #{@entry.created_at}"%></li>
+  <li><%="entry.creator.name: #{@entry.creator.name}"%></li>
+  <li><%="entry.deviceRecordedAt.name: #{@entry.deviceRecordedAt.name}"%></li>
+  <li><%="entry.datetimeRecordedAt.name: #{@entry.datetimeRecordedAt.name}"%></li>
+  <li><%="entry.geospatialRecordedAt.name: #{@entry.geospatialRecordedAt.name}"%></li>
+  </ul>
+
+<script>
+   var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: 'violet',
+    progressColor: 'purple'
+   });
+
+   #{#wavesurfer.load('#{@entry.OriginalFilename}');}
+</script>
+
+
+</html>
+

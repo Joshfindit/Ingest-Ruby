@@ -1,0 +1,21 @@
+{
+  "snippetFilename": "milo.20160205_075709-0400.mp3",
+  "md5AtSave": "e1f46829d56e27913ae5a01bdfb0c3f6",
+  "uuid": "7e18cebf-854d-4a9b-a93b-c79a2b5391bf",
+  "representedDatetime": "2016-02-05 07:57:09 -0400",
+  "representedDatetimeConfidence": "Unknown. Cut with FFMPEG. Needs testing to find out how accurate it is. See https://github.com/Joshfindit/audioprecisiontests for testing results",
+  "original": {
+    "OriginalFilename": "20160205_075709-0400.mp3",
+    "OriginalComputer": "milo",
+    "OriginalComputerMACAddress": "FF:FF:35:8f:FF:FF",
+    "OriginalLocation": {
+      "latitude": "45.838253",
+      "longitude": "-64.30417"
+    },
+    "OriginalFilenameConfidence": "100%",
+    "OriginalComputerConfidence": "User Specified",
+    "OriginalLocationConfidence": "User Specified",
+    "OriginalFileRubyTime": "2016-02-05 07:57:09 -0400",
+    "OrigionalDuration": 1797
+  }
+}

@@ -1,0 +1,103 @@
+GIT
+  remote: git://github.com/subvertallchris/neo4jrb-paperclip.git
+  revision: e70f1f9ea9433a9d103420bdfbdb639197e719a0
+  specs:
+    neo4jrb-paperclip (0.0.3)
+      neo4j (> 3.0.0.alpha.8)
+      paperclip (~> 4.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (4.2.6)
+      activesupport (= 4.2.6)
+      builder (~> 3.1)
+    activesupport (4.2.6)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
+    aws-s3 (0.6.3)
+      builder
+      mime-types
+      xml-simple
+    builder (3.2.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
+    colored (1.2)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.10.0)
+      faraday (>= 0.7.4, < 0.10)
+    faraday_middleware-multi_json (0.0.6)
+      faraday_middleware
+      multi_json
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    httpclient (2.7.1)
+    i18n (0.7.0)
+    json (1.8.3)
+    mime-types (3.0)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0221)
+    mimemagic (0.3.0)
+    minitest (5.8.4)
+    multi_json (1.11.2)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
+    neo4j (7.0.1)
+      activemodel (~> 4)
+      activesupport (~> 4)
+      neo4j-core (>= 6.0.0)
+      orm_adapter (~> 0.5.0)
+    neo4j-core (6.1.2)
+      activesupport
+      faraday (~> 0.9.0)
+      faraday_middleware (~> 0.10.0)
+      faraday_middleware-multi_json
+      httparty
+      httpclient
+      json
+      multi_json
+      neo4j-rake_tasks (>= 0.3.0)
+      net-http-persistent
+    neo4j-rake_tasks (0.4.2)
+      colored
+      httparty
+      os
+      rake
+      rubyzip (~> 1.1.7)
+    net-http-persistent (2.9.4)
+    orm_adapter (0.5.0)
+    os (0.9.6)
+    paperclip (4.3.6)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
+    plist (3.2.0)
+    rake (11.1.2)
+    rubyzip (1.1.7)
+    thread_safe (0.3.5)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    xml-simple (1.1.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  aws-s3
+  neo4j
+  neo4j-core
+  neo4jrb-paperclip!
+  paperclip
+  plist
+
+BUNDLED WITH
+   1.11.2

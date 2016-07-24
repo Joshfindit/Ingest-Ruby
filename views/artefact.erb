@@ -1,0 +1,22 @@
+<html>
+<!-- etc -->
+  <ul>
+
+  <li><%="entry.name: #{@entry.name}"%></li>
+  <li><%="entry.uuid: #{@entry.uuid}"%></li>
+  <li><%="entry.content: #{@entry.content}"%></li>
+  <li><%="entry.created_at: #{@entry.created_at}"%></li>
+  <li><%="entry.creator.name: #{@entry.creator.name}"%></li>
+  <li><%="entry.deviceRecordedAt.name: @entry.deviceRecordedAt.name"%></li>
+  <li><%="entry.datetimeRecordedAt.name: @entry.datetimeRecordedAt.name"%></li>
+  <li><%="entry.geospatialRecordedAt.name: @entry.geospatialRecordedAt.name"%></li>
+  </ul>
+
+  <form action="/Artefact/" method="POST">
+    Name: <input type="text" name="name" value="<%="#{@entry.content}"%>">
+    <br/>
+    Content: <input type="text" name="content" value="<%="#{@entry.content}"%>">
+    <br/>
+    <input type="submit">
+  </form>
+</html>
